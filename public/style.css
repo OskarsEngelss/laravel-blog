@@ -1,5 +1,10 @@
+:root {
+    --shadow: rgb(131, 151, 168);
+    --item-background: rgb(176, 201, 223);
+}
+
 body {
-    width: 100vw;
+    width: 100%;
     height: 100%;
 
     display: flex;
@@ -8,6 +13,7 @@ body {
     flex-direction: column;
 
     margin: 0;
+    padding: 0;
     background-color: rgb(181, 197, 211);
 }
 * {
@@ -16,19 +22,21 @@ body {
 h1, ul {
     width: fit-content;
 
-    background-color: rgb(176, 201, 223);
+    background-color: var(--item-background);
     padding: 10px 30px;
     border-radius: 15px;
-    box-shadow: 6px 6px rgb(131, 151, 168);
+    box-shadow: 6px 6px var(--shadow);
     padding: 0;
     transition: 0.5s;
 }
 h1:hover, ul:hover, .back-button:hover {
-    box-shadow: -6px 6px rgb(131, 151, 168);
+    box-shadow: -6px 6px var(--shadow);
 }
 
 h1 {
     padding: 7px 20px;
+    font-size: 4em;
+    margin: 20px 0px;
 }
 
 ul {
@@ -37,27 +45,81 @@ ul {
     padding: 15px 40px;
 }
 
-.back-button {
-    width: min-content;
-    height: min-content;
-
+.blog-container, .back-button {
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: column;
 
+    border-radius: 30px;
+}
+
+.blog-container {
+    flex-direction: column;
+    background-color: rgb(88, 119, 146);
+    padding: 5px 20px;
+    margin-bottom: 35px;
+}
+
+.back-button {
+    width: min-content;
+    height: min-content;
+
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: rgb(176, 201, 223);
-    box-shadow: 6px 6px rgb(131, 151, 168);
-    padding: 25px;
-    border-radius: 30px;
+    background-color: var(--item-background);
+    box-shadow: 6px 6px var(--shadow);
     transition: 0.5s;
 }
 
-a {
+.back-href, a {
     color: inherit;
     text-align: center;
     font-size: 1.3em;
+}
+
+.back-href {
+    width: inherit;
+    height: inherit;
+    padding: 30px;
+}
+
+.create-form {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: 1.5em;
+    margin: 5px 0px;
+}
+input {
+    width: 300px;
+    height: 20px;
+    margin-top: 3px;
+}
+button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 5px 15px;
+    margin: 8px 0px;
+    background-color: var(--item-background);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 4px 4px var(--shadow);
+    cursor: pointer;
+    transition: 0.5s;
+}
+button:hover {
+    box-shadow: -4px 4px var(--shadow);
 }

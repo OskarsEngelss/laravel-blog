@@ -4,6 +4,6 @@
         <li>Title: {{ $post["title"] }}</li>
     </ul>
     <div class="back-button">
-        <a href="/">Back to posts</a>
+        <a class="back-href" href="/">Back to posts</a>
     </div>
 </x-layout>
